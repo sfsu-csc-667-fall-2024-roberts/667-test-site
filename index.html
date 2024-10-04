@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>667 Test Website</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+
+  <body>
+    <section>
+      <h1>0. Setup</h1>
+
+      <h2>Compilation</h2>
+      <p>
+        Run the following command from the root of your project to compile the
+        Webserver (you may adjust the path separator for your operating system):
+      </p>
+      <pre>javac server/WebServer.java</pre>
+
+      <h2>Record the document root</h2>
+      <p>
+        Have a folder/finder window open to the document root of this site so
+        that we can see the filesystem changes as they occur.
+      </p>
+
+      <h2>Run the server</h2>
+      <p>
+        Run the following command from the root of your project to start the
+        Webserver (you may adjust the path separator for your operating system):
+      </p>
+      <pre>java server.WebServer PORT_NUMBER DOCUMENT_ROOT</pre>
+    </section>
+
+    <section>
+      <h1>1. Bad Request</h1>
+
+      <h2>Request</h2>
+      <p>
+        In your terminal, from the document root, run the following command to
+        send a bad request to the server (you must have node installed):
+      </p>
+      <pre>node app.js</pre>
+    </section>
+
+    <section>
+      <h1>2. GET Request</h1>
+
+      <ol>
+        <li><a href="/get/page.html">GET existing page (200)</a></li>
+        <li><a href="/get/not-there.html">GET missing page (404)</a></li>
+      </ol>
+    </section>
+
+    <section>
+      <h1>3. HEAD Request</h1>
+
+      <ol>
+        <li>
+          <a href="#" id="head-request-existing">HEAD existing page (200)</a>
+          <div id="head-request-existing-result"></div>
+        </li>
+
+        <li>
+          <a href="#" id="head-request-missing">HEAD missing page (404)</a>
+          <div id="head-request-missing-result"></div>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h1>4. PUT Request</h1>
+
+      <ol>
+        <li>
+          <a href="#" id="put-request">PUT a page (201)</a>
+          <div id="put-request-result"></div>
+        </li>
+        <li>
+          <a href="/put/put-test.html">Check that page was created</a>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h1>5. DELETE Request</h1>
+
+      <ol>
+        <li>
+          <a href="#" id="delete-request">DELETE a page (204)</a>
+          <div id="delete-request-result"></div>
+        </li>
+        <li>
+          <a href="/delete/delete-test.html"
+            >Check that page was deleted (404)</a
+          >
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h1>6. Simple Authentication</h1>
+
+      <p>Open each page in an incognito tab to perform the following tests.</p>
+      <ol>
+        <li>
+          <a href="#" id="get-secret-no-credentials"
+            >GET secret page without credentials (401)</a
+          >
+          <div id="get-secret-no-credentials-result"></div>
+        </li>
+        <li>
+          <a href="#" id="get-secret-correct-credentials"
+            >GET secret page with correct credentials (200)</a
+          >
+          <div id="get-secret-correct-credentials-result"></div>
+          <div id="get-secret-correct-credentials-html-result">
+            Page content should appear here
+          </div>
+        </li>
+        <li>
+          <a href="#" id="get-secret-wrong-credentials"
+            >GET secret page with wrong credentials (401)</a
+          >
+          <div id="get-secret-wrong-credentials-result"></div>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h1>7. Threads</h1>
+      <p>Try to test threads: <button id="thread-test">click me</button></p>
+      <div id="thread-test-result"></div>
+      <img id="thread-test-image" />
+    </section>
+
+    <script src="/scripts/head-test.js"></script>
+    <script src="/scripts/put-test.js"></script>
+    <script src="/scripts/delete-test.js"></script>
+    <script src="/scripts/auth-test.js"></script>
+    <script src="/scripts/thread-test.js"></script>
+  </body>
+</html>
