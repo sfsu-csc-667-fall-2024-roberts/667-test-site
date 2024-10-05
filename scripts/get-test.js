@@ -1,15 +1,13 @@
 import { displayResponse } from "./shared.js";
 
 document
-  .getElementById("delete-request")
+  .getElementById("get-request-missing")
   .addEventListener("click", function (event) {
     event.preventDefault();
 
     displayResponse(
-      "delete-request-result",
-      204,
-      fetch("/delete/delete-me.html", {
-        method: "DELETE",
-      })
+      "get-request-missing-result",
+      404,
+      fetch("/get/missing.html")
     );
   });

@@ -47,7 +47,10 @@
 
       <ol>
         <li><a href="/get/page.html">GET existing page (200)</a></li>
-        <li><a href="/get/not-there.html">GET missing page (404)</a></li>
+        <li>
+          <a href="#" id="get-request-missing">GET missing page (404)</a>
+          <div id="get-request-missing-result"></div>
+        </li>
       </ol>
     </section>
 
@@ -76,7 +79,7 @@
           <div id="put-request-result"></div>
         </li>
         <li>
-          <a href="/put/put-test.html">Check that page was created</a>
+          <a href="/put/page.html">Check that page was created</a>
         </li>
       </ol>
     </section>
@@ -133,10 +136,11 @@
       <img id="thread-test-image" />
     </section>
 
-    <script src="/scripts/head-test.js"></script>
-    <script src="/scripts/put-test.js"></script>
-    <script src="/scripts/delete-test.js"></script>
-    <script src="/scripts/auth-test.js"></script>
+    <script src="/scripts/get-test.js" type="module"></script>
+    <script src="/scripts/head-test.js" type="module"></script>
+    <script src="/scripts/put-test.js" type="module"></script>
+    <script src="/scripts/delete-test.js" type="module"></script>
+    <script src="/scripts/auth-test.js" type="module"></script>
     <script src="/scripts/thread-test.js"></script>
   </body>
 </html>
