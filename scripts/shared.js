@@ -9,7 +9,7 @@ export function displayResponse(
   const statusElement = document.createElement("div");
   const headersElement = document.createElement("ul");
 
-  request
+  return request
     .then((response) => {
       statusElement.innerHTML = `<em>Response status (Should be ${expectedResponseStatus}):</em> ${response.status}`;
 
