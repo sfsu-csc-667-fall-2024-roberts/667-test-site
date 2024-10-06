@@ -30,11 +30,15 @@ document
         },
       })
     )
+      .catch((error) => {
+        console.log(error);
+      })
       .then((response) => response.text())
       .then((text) => {
         htmlResultSection.innerHTML = text;
       })
       .catch((error) => {
+        console.log(error);
         htmlResultSection.innerHTML = `Error: ${error.message}`;
       });
   });
