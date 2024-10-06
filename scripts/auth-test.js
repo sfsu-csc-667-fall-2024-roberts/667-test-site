@@ -29,11 +29,14 @@ document
           Authorization: `Basic ${btoa("jrob:password")}`,
         },
       })
-    ).then((response) => {
-      response.text().then((text) => {
+    )
+      .then((response) => response.text())
+      .then((text) => {
         htmlResultSection.innerHTML = text;
+      })
+      .catch((error) => {
+        htmlResultSection.innerHTML = `Error: ${error.message}`;
       });
-    });
   });
 
 document
